@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "jsxFactory": "React.createElement"
+  },
+  "files": [
+    "src/component/disclosure.tsx",
+    "src/component/list.tsx",
+    "src/component/markdown.tsx",
+    "src/component/source.tsx",
+    "src/html.tsx",
+    "src/style.ts",
+    "src/index.ts"
+  ],
+  "references": [
+    {
+      "path": "../alfa-act"
+    },
+    {
+      "path": "../alfa-dom"
+    },
+    {
+      "path": "../alfa-formatter"
+    },
+    {
+      "path": "../alfa-test"
+    },
+    {
+      "path": "../alfa-web"
+    }
+  ]
+}
