@@ -142,19 +142,13 @@ export default function <Q>(): Formatter<Page, Node | Iterable<Node>, Q> {
                             {outcome.expectations
                               .toArray()
                               .map(([id, expectation]) => {
-                                if (expectation.isNone()) {
-                                  return <li>Unknown</li>;
-                                }
-
-                                const result = expectation.get();
-
                                 return (
                                   <li key={id}>
                                     <Markdown
                                       markdown={
-                                        result.isOk()
-                                          ? result.get()
-                                          : result.getErr()
+                                        expectation.isOk()
+                                          ? expectation.get().message
+                                          : expectation.getErr().message
                                       }
                                     />
                                   </li>
