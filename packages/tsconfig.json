@@ -37,6 +37,7 @@
     { "path": "alfa-foldable" },
     { "path": "alfa-formatter" },
     { "path": "alfa-formatter-earl" },
+    { "path": "alfa-formatter-html" },
     { "path": "alfa-formatter-json" },
     { "path": "alfa-formatter-sarif" },
     { "path": "alfa-frontier" },
