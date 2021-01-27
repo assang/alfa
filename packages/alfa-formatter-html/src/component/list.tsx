@@ -18,7 +18,7 @@ const { classes } = style;
 
 Style.add(style);
 
-export const List: React.StatelessComponent<List.Props> = (props) => {
+export const List: React.FunctionComponent<List.Props> = (props) => {
   const { ordered = false } = props;
 
   const items = props.items.map((item, index) => (

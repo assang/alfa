@@ -75,7 +75,7 @@ const { classes } = style;
 
 Style.add(style);
 
-export const Source: React.StatelessComponent<Source.Props> = (props) => {
+export const Source: React.FunctionComponent<Source.Props> = (props) => {
   const { source } = props;
 
   return (
@@ -91,7 +91,7 @@ export namespace Source {
   }
 }
 
-const Node: React.StatelessComponent<Node.Props> = (props) => {
+const Node: React.FunctionComponent<Node.Props> = (props) => {
   const { source } = props;
 
   if (dom.Element.isElement(source)) {
@@ -127,7 +127,7 @@ namespace Node {
   }
 }
 
-const Document: React.StatelessComponent<Document.Props> = (props) => {
+const Document: React.FunctionComponent<Document.Props> = (props) => {
   const { source } = props;
 
   const children = source.children();
@@ -158,7 +158,7 @@ namespace Document {
   }
 }
 
-const Type: React.StatelessComponent<Type.Props> = (props) => {
+const Type: React.FunctionComponent<Type.Props> = (props) => {
   const { source } = props;
 
   return (
@@ -183,7 +183,7 @@ namespace Type {
   }
 }
 
-const Shadow: React.StatelessComponent<Shadow.Props> = (props) => {
+const Shadow: React.FunctionComponent<Shadow.Props> = (props) => {
   const { source } = props;
 
   const children = source.children();
@@ -214,7 +214,7 @@ namespace Shadow {
   }
 }
 
-const Element: React.StatelessComponent<Element.Props> = (props) => {
+const Element: React.FunctionComponent<Element.Props> = (props) => {
   const { source } = props;
 
   const children = source.children({
@@ -269,7 +269,7 @@ namespace Element {
   }
 }
 
-const Attribute: React.StatelessComponent<Attribute.Props> = (props) => {
+const Attribute: React.FunctionComponent<Attribute.Props> = (props) => {
   const { source } = props;
 
   return (
@@ -292,7 +292,7 @@ namespace Attribute {
   }
 }
 
-const Text: React.StatelessComponent<Text.Props> = (props) => {
+const Text: React.FunctionComponent<Text.Props> = (props) => {
   const { source } = props;
   const { data } = source;
 

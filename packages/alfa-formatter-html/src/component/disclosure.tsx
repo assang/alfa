@@ -30,7 +30,7 @@ const { classes } = style;
 
 Style.add(style);
 
-export const Disclosure: React.StatelessComponent<Disclosure.Props> = (
+export const Disclosure: React.FunctionComponent<Disclosure.Props> = (
   props
 ) => {
   const { children, summary } = props;

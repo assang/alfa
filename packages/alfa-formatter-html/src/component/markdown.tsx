@@ -9,7 +9,7 @@ const process = remark()
     createElement: React.createElement,
   });
 
-export const Markdown: React.StatelessComponent<Markdown.Props> = (props) => {
+export const Markdown: React.FunctionComponent<Markdown.Props> = (props) => {
   return process.processSync(props.markdown).result;
 };
 

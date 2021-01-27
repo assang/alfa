@@ -55,6 +55,10 @@ const style = Style.of({
     padding: "1rem",
 
     "& li": {
+      "& + li": {
+        marginTop: "-1px",
+      },
+
       "&:first-child": {
         "& details": {
           "&, & > summary": {
@@ -64,8 +68,13 @@ const style = Style.of({
         },
       },
 
-      "& + li": {
-        marginTop: "-1px",
+      "&:last-child": {
+        "& details": {
+          "&, &:not([open]) > summary": {
+            borderBottomRightRadius: "0.25rem",
+            borderBottomLeftRadius: "0.25rem",
+          },
+        },
       },
     },
 
@@ -109,12 +118,12 @@ const { classes } = style;
 Style.add(style);
 
 export default function <Q>(): Formatter<Page, Node | Iterable<Node>, Q> {
-  return function HTML(page, outcomes) {
+  return function HTML(page, rules, outcomes) {
     const markup = ReactDOM.renderToStaticMarkup(
       <html lang="en">
         <meta charSet="utf-8" />
 
-        <title>Results for {page.response.url}</title>
+        <title>Results for {page.response.url.toString()}</title>
 
         <style dangerouslySetInnerHTML={{ __html: Style.toString() }} />
 
@@ -122,7 +131,7 @@ export default function <Q>(): Formatter<Page, Node | Iterable<Node>, Q> {
           <div className={classes.outcomes}>
             <List
               items={[...outcomes]
-                .map((outcome, index) => {
+                .map((outcome) => {
                   const target = outcome.target;
 
                   if (Node.isNode(target)) {
